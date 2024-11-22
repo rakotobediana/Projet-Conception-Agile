@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inclusion de 2 fichiers CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listeJoueur.css') }}">
+    <title>Accueil</title>
+</head>
+<body>
+    <!-- Formulaire avec méthode POST -->
+    <form action="{{ url_for('views.config_joueur') }}" method="POST">
+        <div class="formulaire">
+            <div class="champ1">
+                <!-- Dynamically generated player inputs based on nb_player -->
+                {% for i in range(nb_player | int) %}
+                    <div>
+                        <label for="player{{ i }}" class="nb_player">Joueur {{ i + 1 }}</label>
+                        <input type="text" id="player{{ i }}" name="player{{ i }}" class="player-input">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Bouton pour soumettre le formulaire -->
+            <div class="champ3">
+                <input type="submit" value="Jouer" class="submit-button">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

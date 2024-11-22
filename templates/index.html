@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Accueil</title>
+</head>
+<body>
+     <!-- Formulaire avec méthode POST -->
+     <form action="{{ url_for('views.config_joueur') }}" method="POST">
+            <div class="formulaire">
+                    <div class="champ1">
+                        <!-- Champ numérique pour l'entrée d'un nombre -->
+                        <label for="quantity" class="nb_player">Nombre de Joueur</label>
+                        <input type="number" id="quantity" name="quantity" value="0" min="0" max="100" step="1" class="val_nb_player" required>
+                        
+                        {% for i in range(nb_player | int) %}
+                        <div>
+                            <label for="player{{ i }}" class="nb_player">Joueur {{ i + 1 }}</label>
+                            <input type="text" id="player{{ i }}" name="player{{ i }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="champ2">
+                        <!-- Liste déroulante pour choisir une option -->
+                        <label for="rule" class="rules">Règles de Planning Poker</label>
+                        <select id="rule" name="rule" required>
+                            <optgroup label="Sélectionner une règle">
+                                <option value="moyenne">Moyenne</option>
+                                <option value="médiane">Médiane</option>
+                                <option value="majorite_absolue">Majorité absolue</option>
+                                <option value="majorite_relative">Majorité relative</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Bouton pour soumettre le formulaire -->
+                    <div class="champ3">
+                        <input type="submit" value="Faire une partie">
+                    </div>
+            </div>
+        </form>
+</body>
+</html>

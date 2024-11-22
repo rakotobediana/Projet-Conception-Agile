@@ -1,0 +1,26 @@
+/* second-style.css */
+.formulaire {
+    max-width: 600px;
+    margin: auto;
+    padding: 20% 20%;
+
+}
+
+.champ1 div {
+    margin-bottom: 10px;
+    margin-top: 8%;
+
+}
+
+.player-input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.player-input:focus {
+    border-color: #66afe9;
+    outline: none;
+}

@@ -1,0 +1,63 @@
+/* Style général pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+/* Style pour le formulaire */
+.formulaire {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Augmente la largeur du formulaire */ /* Augmente la hauteur du formulaire */
+    display: flex;
+    flex-direction: column; /* Dispose les éléments verticalement */
+    gap: 80px; /* Espace entre les champs */
+}
+
+
+/* Ajout d'un espacement entre le label et l'input */
+label {
+    margin-bottom: 10px; /* Espace entre label et input */
+}
+
+.nb_player, .rules {
+    background-color: #EAE151;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #EAE151;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style pour chaque champ */
+.champ1, .champ2, .champ3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Style des boutons et des champs */
+input[type="number"], select, input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #EAE151;
+    border: 1px solid #EAE151;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+    cursor: pointer;
+}
