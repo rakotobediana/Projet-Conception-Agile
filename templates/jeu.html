@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jeu.css') }}">
 </head>
 <body>
-    
+    <div class="card-container">
+        {% for carte in cartes %}
+            <div><img src="{{ url_for('static', filename='images/' + carte) }}" alt="Carte {{ loop.index }}"></div>
+        {% endfor %}
+    </div>
 </body>
 </html>
