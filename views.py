@@ -37,7 +37,6 @@ def config_joueur():
 def jeu():
     cartes = ["cartes_0.svg", "cartes_1.svg", "cartes_2.svg", "cartes_3.svg", 
               "cartes_5.svg", "cartes_8.svg", "cartes_13.svg", "cartes_20.svg", 
-              "cartes_40.svg", "cartes_100.svg", "cartes_cafe.svg", "cartes_interro.svg"]
-    
-    return render_template('jeu.html')
+              "cartes_40.svg", "cartes_100.svg", "cartes_cafe.svg", "cartes_interro.svg"] 
+    return render_template('jeu.html', cartes=cartes)
 
