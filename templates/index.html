@@ -40,6 +40,10 @@
                     <div class="champ3">
                         <input type="submit" value="Faire une partie">
                     </div>
+                    {% if error %}
+                    <p style="color: red; text-decoration: underline;" class="erreur_index">{{ error }}</p>
+                    {% endif %}
+
             </div>
         </form>
 </body>
