@@ -1,6 +1,5 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for ,flash
 from flask import Blueprint
-
 
 views = Blueprint('views', __name__, template_folder='templates')
 
@@ -8,7 +7,6 @@ views = Blueprint('views', __name__, template_folder='templates')
 @views.route('/')
 def index():
     return render_template('index.html', nb_player=0)  # Passer nb_player avec une valeur initiale
-
 
 # Route pour la configuration des joueurs
 @views.route('/listeJoueur', methods=['POST'])
@@ -32,9 +30,8 @@ def config_joueur():
 
     # Si tout est valide, afficher la page listeJoueur.html
     return render_template('listeJoueur.html', nb_player=nb_player, rule=rule)
-  
 
-@views.route('/jeu', methods=['POST'])
+# Route pour débuter une partie de poker 
+@views.route('/listeJoueur/jeu', methods=['POST'])
 def jeu():
-    message = "Message de test "
-    return render_template('jeu.html' ,  message=message)
+    return render_template('jeu.html' )
