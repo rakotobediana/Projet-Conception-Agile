@@ -17,7 +17,7 @@
                 {% for i in range(nb_player | int) %}
                     <div>
                         <label for="player{{ i }}" class="nb_player">Joueur {{ i + 1 }}</label>
-                        <input type="text" id="player{{ i }}" name="player{{ i }}" class="player-input">
+                        <input type="text" id="player{{ i }}" name="player{{ i }}" class="player-input" required>
                     </div>
                 {% endfor %}
             </div>
