@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for ,flash
+from flask import render_template, request, redirect, url_for
 from flask import Blueprint
 
 views = Blueprint('views', __name__, template_folder='templates')
@@ -23,7 +23,7 @@ def config_joueur():
     # Convertir nb_player en entier et gérer les erreurs
     try:
         nb_player = int(nb_player)
-        if nb_player <= 1:  # S'assurer que nb_player est un entier positif
+        if nb_player <= 1:  # S'assurer que nb_player est un entier superieur a 1 
             raise ValueError("Le nombre de joueurs doit être supérieur à 1.")
     except ValueError as e:
         return render_template('index.html', error=str(e), nb_player=0, rule=rule)
@@ -31,7 +31,13 @@ def config_joueur():
     # Si tout est valide, afficher la page listeJoueur.html
     return render_template('listeJoueur.html', nb_player=nb_player, rule=rule)
 
+
 # Route pour débuter une partie de poker 
 @views.route('/listeJoueur/jeu', methods=['POST'])
 def jeu():
-    return render_template('jeu.html' , joueur=0)
+    cartes = ["cartes_0.svg", "cartes_1.svg", "cartes_2.svg", "cartes_3.svg", 
+              "cartes_5.svg", "cartes_8.svg", "cartes_13.svg", "cartes_20.svg", 
+              "cartes_40.svg", "cartes_100.svg", "cartes_cafe.svg", "cartes_interro.svg"]
+    
+    return render_template('jeu.html')
+
