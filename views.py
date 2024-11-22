@@ -34,4 +34,4 @@ def config_joueur():
 # Route pour débuter une partie de poker 
 @views.route('/listeJoueur/jeu', methods=['POST'])
 def jeu():
-    return render_template('jeu.html' )
+    return render_template('jeu.html' , joueur=0)
