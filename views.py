@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from flask import Blueprint
 
+
 views = Blueprint('views', __name__, template_folder='templates')
 
 # Route principale pour la page d'accueil
