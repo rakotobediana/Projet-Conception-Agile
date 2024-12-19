@@ -7,10 +7,10 @@ PROJECT_NAME           = "Projet-conception-agile"
 PROJECT_NUMBER         = 1.0
 
 # Output directory for the generated documentation
-OUTPUT_DIRECTORY       = documentation
+OUTPUT_DIRECTORY       = documentation 
 
 # Source code directory
-INPUT                  = src
+INPUT                  = models app.py
 
 # Recurse through all subdirectories
 RECURSIVE              = YES

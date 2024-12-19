@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from flask import Blueprint
 
-views = Blueprint('views', __name__, template_folder='templates')
+views = Blueprint('views', __name__, template_folder='../templates')
 
 # Route principale pour la page d'accueil
 @views.route('/')
@@ -12,8 +12,8 @@ def index():
 @views.route('/listeJoueur', methods=['POST'])
 def config_joueur():
     # Récupération des données du formulaire
-    nb_player = request.form.get('quantity', "").strip()  # Valeur par défaut: chaîne vide
-    rule = request.form.get('rule', "").strip()           # Valeur par défaut: chaîne vide
+    nb_player = request.form.get('quantity', "").strip()  
+    rule = request.form.get('rule', "").strip()           
 
     # Vérification si les données existent
     if not nb_player or not rule:
