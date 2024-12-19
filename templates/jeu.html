@@ -9,9 +9,16 @@
 </head>
 <body>
     <div class="card-container">
+        <ul>
+            {% for i in range(nb_player) %}
+                <li>Joueur {{ i + 1 }}: {{ joueurs[i].nom }}</li>
+            {% endfor %}
+        </ul>
+
         {% for carte in cartes %}
             <div><img src="{{ url_for('static', filename='images/' + carte) }}" alt="Carte {{ loop.index }}"></div>
         {% endfor %}
+
     </div>
 </body>
 </html>
