@@ -9,14 +9,32 @@
 </head>
 <body>
     <div class="card-container">
-        <ul>
+
+        <div>
+            <!-- Affichage de la question et de son titre -->
+            <p>Question {{ question.numero }} : {{ question.titre }}</p>
+    
+            <!-- Formulaire pour passer à la question suivante -->
+            {% if next_question %}
+                <a href="{{ url_for('views.jeu') }}?numero={{ next_question }}">
+                    <button>Suivant</button>
+                </a>
+            {% else %}
+                <p>Fin du backlog</p>
+            {% endif %}
+        </div>
+
+        <ul class="listeJ">
             {% for i in range(nb_player) %}
-                <li>Joueur {{ i + 1 }}: {{ joueurs[i].nom }}</li>
+                <li class="player">
+                    <img src="{{ url_for('static', filename='images/joueur.png') }}" alt="Image Joueur {{ i + 1 }}" class="player-image">
+                    <p>{{ joueurs[i].nom }}</p>
+                </li>
             {% endfor %}
         </ul>
-
+        
         {% for carte in cartes %}
-            <div><img src="{{ url_for('static', filename='images/' + carte) }}" alt="Carte {{ loop.index }}"></div>
+            <div><img src="{{ url_for('static', filename='images/' + carte) }}" alt="Carte {{ loop.index }}  " class="cards"></div>
         {% endfor %}
 
     </div>

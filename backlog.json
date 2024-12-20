@@ -1,0 +1,11 @@
+{
+    "backlog": [
+        { "numero": 1, "titre": "Connexion utilisateur" },
+        { "numero": 2, "titre": "Inscription utilisateur" },
+        { "numero": 3, "titre": "Ajout de produit" },
+        { "numero": 4, "titre": "Panier d'achat" },
+        { "numero": 5, "titre": "Paiement sécurisé" },
+        { "numero": 6, "titre": "Notifications par email" },
+        { "numero": 7, "titre": "Rapport des ventes" }
+    ]
+}

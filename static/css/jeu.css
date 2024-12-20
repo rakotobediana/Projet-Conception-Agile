@@ -1,6 +1,7 @@
 /* styles.css */
 
 /* Centrer tout le contenu verticalement et horizontalement */
+
 body {
     display: flex;
     justify-content: center;
@@ -21,6 +22,30 @@ body {
     margin: 0 auto; /* Centrer horizontalement */
 }
 
+.listeJ {
+    position: absolute; /* Position absolue par rapport au body */
+    top: 10px; /* Distance du haut */
+    left: 10px; /* Distance de la droite */
+    padding: 10px; /* Espacement interne */
+
+}
+.listeJ p {
+    display: inline-block;
+    position: absolute;
+    margin-top: 35%;   
+}
+
+.player-image {
+    max-width: 67px;
+    height: auto;
+    margin-bottom: 30%;
+
+}
+
+.player{
+    list-style-type: none; /* Supprime les puces */
+}
+
 /* Style des cartes */
 .card-container div {
     display: flex;
@@ -28,7 +53,7 @@ body {
     align-items: center;
 }
 
-.card-container img {
+.card-container .cards {
     width: 100px; /* Largeur des images */
     height: auto; /* Garde les proportions */
     border: 2px solid #ddd; /* Bordure grise légère */
